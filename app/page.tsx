@@ -1,9 +1,14 @@
-import Image from "next/image";
+import Container from "@/components/Container";
+import Navbar from "./pages/Navbar";
+import Header from "./pages/Header";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <div>Portfolio</div>
-    </div>
+    <>
+    <Container>
+      <Navbar/>
+      <Header />
+    </Container>
+    </>
   );
 }
