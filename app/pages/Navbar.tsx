@@ -12,21 +12,13 @@ export default function Navbar({ className }: { className?: string }) {
         )}
       >
         <div>
-          <h1 className="text-primary border-x p-4 font-bold tracking-tight">
-            whoami$
-          </h1>
+          <h1 className="border-x p-4 font-bold tracking-tight">whoami$</h1>
         </div>
         <div className="flex justify-center">
-          <div className="text-primary border-x p-4 font-bold tracking-tight">
-            Projects
-          </div>
-          <div className="text-primary border-r p-4 font-bold tracking-tight">
-            Blogs
-          </div>
-          <div className="text-primary border-r p-4 font-bold tracking-tight">
-            Resume
-          </div>
-          <div className="text-primary border-r p-4 font-bold tracking-tight">
+          <div className="border-x p-4 font-bold tracking-tight">Projects</div>
+          <div className="border-r p-4 font-bold tracking-tight">Blogs</div>
+          <div className="border-r p-4 font-bold tracking-tight">Resume</div>
+          <div className="p-4 font-bold tracking-tight">
             <AnimatedThemeToggler />
           </div>
         </div>
