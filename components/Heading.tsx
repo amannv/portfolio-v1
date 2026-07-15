@@ -10,7 +10,7 @@ export default function Heading({
   return (
     <>
       <div className={cn("border-b", className)}>
-        <h1 className="text-2xl font-bold tracking-tight p-2 px-4">{title}</h1>
+        <h1 className="p-2 px-4 text-2xl font-bold tracking-tight">{title}</h1>
       </div>
     </>
   );
