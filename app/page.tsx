@@ -4,6 +4,7 @@ import Hero from "./pages/Hero";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import TechStack from "./pages/TechStack";
+import Projects from "./pages/Projects";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <Hero />
         <About />
         <Contact />
+        <Projects />
         <TechStack />
       </Container>
     </>

@@ -7,9 +7,9 @@ export default function StackBtn({
   text,
   url,
 }: {
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
   text: string;
-  url: string;
+  url?: string;
 }) {
   return (
     <div>
