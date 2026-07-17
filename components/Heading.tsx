@@ -11,9 +11,10 @@ export default function Heading({
   children?: React.ReactNode;
 }) {
   return (
-    <div className={cn("border-b flex justify-between items-center pr-4", className)}>
-      <h1 className="p-2 px-4 text-2xl font-bold tracking-tight">{title}</h1>
-      {children}
+    <div className={cn("relative flex justify-between items-center", className)}>
+      <div className="absolute bottom-0 left-1/2 w-screen -translate-x-1/2 border-b pointer-events-none" />
+        <h1 className="p-2 px-4 text-2xl font-bold tracking-tight">{title}</h1>
+        {children}
     </div>
   );
 }

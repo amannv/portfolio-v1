@@ -9,7 +9,7 @@ export default function Hero({ className }: { className?: string }) {
     <>
       <div className="grid grid-cols-[1fr_auto]">
         <div>
-          <Heading title="Aman Verma" className="border-t-0" />
+          <h1 className="border-b p-2 px-4 text-2xl font-bold">Aman Verma</h1>
           <div className="flex border-b px-2 py-2 text-sm">
             <FlipWords
               className="text-muted-foreground dark:text-muted-foreground"
@@ -34,7 +34,7 @@ export default function Hero({ className }: { className?: string }) {
         <div className="flex items-center justify-center border-l px-10">
           <img
             src="/avatar.jpeg"
-            className="ring-primary h-32 w-32 rounded-sm object-cover ring-6"
+            className="ring-primary h-32 w-32 rounded-full object-cover ring-4"
             alt="Avatar"
           />
         </div>

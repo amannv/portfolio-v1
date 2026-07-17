@@ -94,7 +94,7 @@ export default function TechStack() {
             variant="outline"
             size="sm"
             onClick={() => setDropdownOpen(!dropdownOpen)}
-            className="h-7 px-2.5 py-1 text-xs font-semibold flex items-center gap-1.5"
+            className="h-7 px-2.5 mr-3 py-1 text-xs font-semibold flex items-center gap-1.5"
           >
             <span>{filters.find((f) => f.value === activeFilter)?.label}</span>
             <span className="text-[10px]"><RiArrowDropDownLine /></span>

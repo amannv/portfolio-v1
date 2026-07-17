@@ -20,24 +20,16 @@ export default function About() {
           {" "}
           Next.js{" "}
         </span>
-        to architect robust,
-        <span className="bg-primary text-primary-foreground mx-2 rounded-sm">
-          {" "}
-          scalable web apps{" "}
-        </span>
-        and turn complex workflows into seamless, automated experience.
+        to architect robust, scalable web apps and turn complex workflows into
+        seamless, automated experience.
       </p>
       <p className="p-4 text-sm">
         • Offline — When away from the keyboard, I unwind with into
         <span className="bg-primary text-primary-foreground mx-2 rounded-sm">
           {" "}
-          story-mode games{" "}
+          story-mode games,{" "}
         </span>
-        , movies, and series, enjoying great narratives and
-        <span className="bg-primary text-primary-foreground mx-2 rounded-sm">
-          {" "}
-          world-building.{" "}
-        </span>
+        movies, and series, enjoying great narratives and world-building.
       </p>
       <ScaleX />
     </>

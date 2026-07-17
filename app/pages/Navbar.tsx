@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 export default function Navbar({ className }: { className?: string }) {
   return (
-    <div className="bg-background sticky top-0 z-50 w-full max-w-4xl">
+    <div className="bg-background sticky top-0 z-50 w-full max-w-3xl">
       <div className="grid w-full grid-cols-[16px_minmax(0,1fr)_16px]">
         <ScaleY className="h-14 min-h-0" />
         <div
