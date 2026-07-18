@@ -20,7 +20,7 @@ export default function Contact() {
   return (
     <>
       <Heading title="Contact" />
-      <div className="flex items-center justify-center gap-2">
+      <div className="flex flex-wrap items-center justify-center gap-2">
         {contactItems.map((contact, index) => (
           <ContactBtn
             key={index}

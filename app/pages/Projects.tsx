@@ -1,6 +1,7 @@
 import Heading from "@/components/Heading";
 import ScaleX from "@/components/ScaleX";
 import ProjectCard, { ProjectCardProps } from "@/components/ProjectCard";
+import { cn } from "@/lib/utils";
 
 const projectsList: ProjectCardProps[] = [
   {
@@ -45,12 +46,21 @@ const projectsList: ProjectCardProps[] = [
 ];
 
 export default function Projects() {
+  const total = projectsList.length;
   return (
     <>
       <Heading title="Projects" />
-      <div className="divide-border grid w-full grid-cols-1 md:grid-cols-2 divide-x">
+      <div className="grid w-full grid-cols-1 md:grid-cols-2">
         {projectsList.map((project, idx) => (
-          <div key={idx} className={`p-6 md:p-8 border-b md:border-b-0   ${idx >= 2 ? "md:border-t border-t-0" : ""}`}>
+          <div
+            key={idx}
+            className={cn(
+              "p-6 md:p-8",
+              idx === total - 1 ? "border-b-0" : "border-b",
+              idx < 2 ? "md:border-b" : "md:border-b-0",
+              idx % 2 === 0 ? "md:border-r" : "md:border-r-0",
+            )}
+          >
             <ProjectCard {...project} />
           </div>
         ))}

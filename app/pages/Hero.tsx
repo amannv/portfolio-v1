@@ -20,21 +20,14 @@ export default function Hero({ className }: { className?: string }) {
             <p>20 • Punjab • India</p>
           </div>
           <div className="text-muted-foreground flex px-4 py-2 text-sm">
-            <p>
-              I enjoy building tools people
-              <span className="bg-primary text-primary-foreground mx-2 rounded-sm">
-                {" "}
-                actually{" "}
-              </span>
-              use.
-            </p>
+            <p>I enjoy building tools people actually use.</p>
           </div>
         </div>
 
         <div className="flex items-center justify-center border-l px-10">
           <img
             src="/avatar.jpeg"
-            className="ring-primary h-28 w-28 rounded-2xl object-cover ring-4"
+            className="ring-border h-28 w-28 rounded-2xl object-cover ring-6"
             alt="Avatar"
           />
         </div>

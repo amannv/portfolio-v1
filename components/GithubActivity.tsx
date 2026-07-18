@@ -47,7 +47,7 @@ export default function GithubActivity() {
         colorScheme={resolvedTheme as "light" | "dark"}
         theme={theme}
         blockSize={11}
-        blockMargin={2}
+        blockMargin={3}
         fontSize={13}
         labels={{ totalCount: "{{count}} contributions in the last year" }}
       />

@@ -6,7 +6,7 @@ export default function GithubCalendar() {
     return (
         <>
         <Heading title="Github Activity" />
-        <div className="flex justify-center items-center p-4 scrollbar-none">
+        <div className="flex justify-center items-center py-4 px-0 scrollbar-none">
             <GithubActivity />
         </div>
         <ScaleX />

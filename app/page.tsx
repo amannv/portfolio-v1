@@ -13,10 +13,10 @@ export default function Home() {
       <Container>
         <Header />
         <Hero />
-        <About />
         <Contact />
-        <Projects />
         <GithubActivity />
+        <About />
+        <Projects />
         <TechStack />
       </Container>
     </>
