@@ -43,7 +43,7 @@ export const MagneticButton = ({
     <div
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="cursor-pointer rounded-md border-1 border-dashed border-ring transition-colors duration-150"
+      className="cursor-pointer rounded-md border border-dashed border-ring transition-colors duration-150"
       style={{
         borderColor: hasMoved ? "var(--input)" : "transparent",
         backgroundColor: hasMoved

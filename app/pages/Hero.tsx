@@ -34,7 +34,7 @@ export default function Hero({ className }: { className?: string }) {
         <div className="flex items-center justify-center border-l px-10">
           <img
             src="/avatar.jpeg"
-            className="ring-primary h-32 w-32 rounded-full object-cover ring-4"
+            className="ring-primary h-28 w-28 rounded-2xl object-cover ring-4"
             alt="Avatar"
           />
         </div>

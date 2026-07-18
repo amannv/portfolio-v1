@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import TechStack from "./pages/TechStack";
 import Projects from "./pages/Projects";
+import GithubActivity from "./pages/GithubActivity";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <About />
         <Contact />
         <Projects />
+        <GithubActivity />
         <TechStack />
       </Container>
     </>
