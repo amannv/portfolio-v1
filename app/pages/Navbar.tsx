@@ -18,17 +18,15 @@ export default function Navbar({ className }: { className?: string }) {
     <div className="bg-background sticky top-0 z-50 w-full max-w-3xl border-x">
       <div
         className={cn(
-          "flex h-14 w-full items-center justify-between px-4",
+          "flex h-14 w-full items-center justify-end px-4",
           className,
         )}
       >
-        <div>
-          <h1 className="p-4 text-sm font-bold tracking-tight">$whoami</h1>
-        </div>
+       
         <div className="flex items-center justify-center">
-          <div className="p-4 text-sm font-bold tracking-tight">Projects</div>
+          {/* <div className="p-4 text-sm font-bold tracking-tight">Projects</div>
           <div className="p-4 text-sm font-bold tracking-tight">Blogs</div>
-          <div className="p-4 text-sm font-bold tracking-tight">Resume</div>
+          <div className="p-4 text-sm font-bold tracking-tight">Resume</div> */}
           <div className="flex items-center justify-center p-4">
             {mounted && (
               <AnimatedThemeToggler
