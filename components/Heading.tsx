@@ -11,9 +11,9 @@ export default function Heading({
   children?: React.ReactNode;
 }) {
   return (
-    <div className={cn("relative flex justify-between items-center", className)}>
-      <div className="absolute bottom-0 left-1/2 w-screen -translate-x-1/2 border-b pointer-events-none" />
-      <h1 className="p-2 px-4 text-2xl font-bold tracking-tight">{title}</h1>
+    <div className={cn("relative flex justify-between items-center px-12", className)}>
+      <div className="absolute bottom-0 left-1/2 w-screen -translate-x-1/2 border-b pointer-events-none z-0" />
+      <h1 className="py-2 text-2xl font-heading relative z-10">{title}</h1>
       {children}
     </div>
   );

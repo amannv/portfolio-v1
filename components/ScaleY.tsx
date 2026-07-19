@@ -5,11 +5,11 @@ export default function ScaleY({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "bg-background relative min-h-screen w-4 border-x z-10",
+        "bg-background relative min-h-full w-8 z-10 overflow-hidden",
         className,
       )}
     >
-      <Scales size={8} orientation="diagonal" />
+      <Scales size={6} orientation="diagonal" />
     </div>
   );
 }

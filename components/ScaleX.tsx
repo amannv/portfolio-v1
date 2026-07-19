@@ -5,7 +5,7 @@ export default function ScaleX({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "bg-background relative left-1/2 h-6 w-screen -translate-x-1/2 border-y z-10",
+        "bg-background relative left-1/2 w-screen -translate-x-1/2 h-6 z-20 overflow-hidden",
         className,
       )}
     >

@@ -29,7 +29,7 @@ export default function ProjectCard({
   isLive = false,
 }: ProjectCardProps) {
   return (
-    <Card className="group/card bg-background border-border/40 relative mx-auto w-full rounded-sm border pt-0">
+    <Card className="group/card bg-background border-border/40 relative mx-auto w-full rounded-none border pt-0">
       <div className="relative aspect-video overflow-hidden">
         <img
           src={image}
@@ -37,9 +37,9 @@ export default function ProjectCard({
           className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover/card:scale-105"
         />
       </div>
-      <CardHeader className="pt-4 pb-3">
+      <CardHeader className="pb-1">
         <div className="flex items-center justify-between gap-2">
-          <CardTitle className="text-foreground text-base font-bold tracking-tight">
+          <CardTitle className="text-foreground text-base tracking-tight">
             {title}
           </CardTitle>
           {isLive && (

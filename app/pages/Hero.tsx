@@ -19,13 +19,13 @@ export default function Hero({ className }: { className?: string }) {
         <div className="shrink-0">
           <img
             src="/avatar.jpeg"
-            className="h-20 w-20 rounded-full border-2 object-cover"
+            className="h-28 w-28 rounded-full border-2 object-cover"
             alt="Aman Verma"
           />
         </div>
         <div className="flex flex-col gap-1">
-          <h1 className="text-2xl font-bold tracking-tight">Aman Verma</h1>
-          <div className="text-muted-foreground text-sm">
+          <h1 className="text-3xl font-bold tracking-tight">Aman Verma</h1>
+          <div className="text-muted-foreground text-md">
             <FlipWords
               className="text-muted-foreground dark:text-muted-foreground px-0"
               words={words}

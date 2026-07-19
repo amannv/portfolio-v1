@@ -120,7 +120,8 @@ export default function TechStack() {
           )}
         </div>
       </Heading>
-      <div className="flex flex-wrap gap-1 p-4">
+      <div className="relative flex flex-wrap gap-1 px-12 py-5">
+        <div className="absolute bottom-0 left-1/2 w-screen -translate-x-1/2 border-b pointer-events-none z-0" />
         {filteredItems.map((item, index) => (
           <StackBtn
             key={index}
@@ -130,7 +131,6 @@ export default function TechStack() {
           />
         ))}
       </div>
-      <ScaleX />
     </>
   );
 }

@@ -48,14 +48,15 @@ const projectsList: ProjectCardProps[] = [
 export default function Projects() {
   const total = projectsList.length;
   return (
-    <>
+    <div className="relative">
       <Heading title="Projects" />
       <div className="grid w-full grid-cols-1 md:grid-cols-2">
         {projectsList.map((project, idx) => (
           <div
             key={idx}
             className={cn(
-              "p-6 md:p-8",
+              "py-8 px-16",
+              idx % 2 === 0 ? "md:pl-16 md:pr-8" : "md:pr-16 md:pl-8",
               idx === total - 1 ? "border-b-0" : "border-b",
               idx < 2 ? "md:border-b" : "md:border-b-0",
               idx % 2 === 0 ? "md:border-r" : "md:border-r-0",
@@ -65,7 +66,7 @@ export default function Projects() {
           </div>
         ))}
       </div>
-      <ScaleX />
-    </>
+      <div className="absolute bottom-0 left-1/2 w-screen -translate-x-1/2 border-b pointer-events-none z-0" />
+    </div>
   );
 }

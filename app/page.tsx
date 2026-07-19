@@ -6,16 +6,13 @@ import Contact from "./pages/Contact";
 import TechStack from "./pages/TechStack";
 import Projects from "./pages/Projects";
 import GithubActivity from "./pages/GithubActivity";
-
+import NewHero from "./pages/NewHero";
 export default function Home() {
   return (
     <>
       <Container>
-        <Header />
-        <Hero />
-        <Contact />
+        <NewHero />
         <GithubActivity />
-        <About />
         <Projects />
         <TechStack />
       </Container>
