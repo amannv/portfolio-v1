@@ -1,14 +1,15 @@
 "use client";
 import { ActivityCalendar, type Activity } from "react-activity-calendar";
+import "react-activity-calendar/tooltips.css";
 import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 
 const USERNAME = "amannv";
 
 const theme = {
-  light: ['#ebedf0', '#c2c2c2', '#8f8f8f', '#4d4d4d', '#1a1a1a'],
-  dark: ['#1B1B1B', '#333333', '#666666', '#999999', '#FFFFFF'],
-}
+  light: ["#ebedf0", "#c2c2c2", "#8f8f8f", "#4d4d4d", "#1a1a1a"],
+  dark: ["#1B1B1B", "#333333", "#666666", "#999999", "#FFFFFF"],
+};
 
 export default function GithubActivity() {
   const [data, setData] = useState<Activity[]>([]);

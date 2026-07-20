@@ -1,6 +1,6 @@
-import { Badge } from "@/components/ui/badge";
 import { TbWorld } from "react-icons/tb";
 import { TbBrandGithub } from "react-icons/tb";
+
 import {
   Card,
   CardDescription,
@@ -8,6 +8,16 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import LinkIcon from "./icons/LinkIcon";
+import TagIcon from "./icons/TagIcon";
+import LiveIcon from "./icons/LiveIcon";
+import BuildingIcon from "./icons/BuildingIcon";
+import {
+  TooltipContent,
+  Tooltip,
+  TooltipTrigger,
+  TooltipProvider,
+} from "./ui/tooltip";
 
 export interface ProjectCardProps {
   title: string;
@@ -17,6 +27,7 @@ export interface ProjectCardProps {
   liveLink?: string;
   githubLink?: string;
   isLive?: boolean;
+  isBuilding?: boolean;
 }
 
 export default function ProjectCard({
@@ -27,9 +38,10 @@ export default function ProjectCard({
   liveLink,
   githubLink,
   isLive = false,
+  isBuilding = false,
 }: ProjectCardProps) {
   return (
-    <Card className="group/card bg-background border-border/40 relative mx-auto w-full rounded-none border pt-0">
+    <Card className="group/card relative mx-auto w-full rounded-2xl border bg-transparent pt-0 shadow-none ring-0">
       <div className="relative aspect-video overflow-hidden">
         <img
           src={image}
@@ -37,62 +49,56 @@ export default function ProjectCard({
           className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover/card:scale-105"
         />
       </div>
-      <CardHeader className="pb-1">
+      <CardHeader className="pt-0">
         <div className="flex items-center justify-between gap-2">
           <CardTitle className="text-foreground text-base tracking-tight">
             {title}
           </CardTitle>
-          {isLive && (
-            <div className="flex shrink-0 items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2 py-0.5 text-[9px] font-bold tracking-wider text-emerald-600 uppercase select-none dark:text-emerald-400">
-              <span className="relative flex h-1.5 w-1.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
-              </span>
-              Live
-            </div>
-          )}
+          {isLive ? <LiveIcon /> : isBuilding ? <BuildingIcon /> : null}
         </div>
-        <CardDescription className="text-muted-foreground mt-1 line-clamp-3 text-xs leading-relaxed">
+        <CardDescription className="text-muted-foreground line-clamp-3 text-xs leading-relaxed">
           {description}
         </CardDescription>
       </CardHeader>
-      <CardFooter className="flex items-center justify-between gap-1.5 border-none bg-transparent pt-0 pb-4">
-        <div className="flex flex-wrap gap-1.5">
-          {tags.map((tag) => (
-            <Badge
-              key={tag}
-              variant="outline"
-              className="text-muted-foreground/90 border-border/60 bg-muted/20 rounded-xs px-2.5 py-0.5 font-mono text-[10px] font-semibold"
-            >
-              {tag}
-            </Badge>
-          ))}
-        </div>
-        <div className="flex shrink-0 items-center gap-1.5">
-          {githubLink && (
-            <a
-              href={githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              title="GitHub Repository"
-              className="border-border bg-background text-muted-foreground hover:bg-muted hover:text-foreground inline-flex size-7 items-center justify-center rounded-md border transition-colors active:translate-y-px"
-            >
-              <TbBrandGithub size={16} />
-            </a>
-          )}
-          {liveLink && (
-            <a
-              href={liveLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Live Website"
-              className="border-border bg-background text-muted-foreground hover:bg-muted hover:text-foreground inline-flex size-7 items-center justify-center rounded-md border transition-colors active:translate-y-px"
-            >
-              <TbWorld size={16} />
-            </a>
-          )}
-        </div>
-      </CardFooter>
+      <TooltipProvider>
+        <CardFooter className="flex items-center justify-between gap-1.5 border-none bg-transparent pt-0 pb-4">
+          <div className="flex flex-wrap gap-1.5">
+            {tags.map((tag, index) => (
+              <Tooltip key={index}>
+                <TooltipTrigger
+                  render={<TagIcon key={index} title={tag} tag={tag} />}
+                />
+                <TooltipContent side={"bottom"}>{tag}</TooltipContent>
+              </Tooltip>
+            ))}
+          </div>
+          <div className="flex shrink-0 items-center gap-1.5">
+            {githubLink && (
+              <Tooltip>
+                <TooltipTrigger
+                  render={
+                    <LinkIcon
+                      link={githubLink}
+                      icon={<TbBrandGithub size={16} />}
+                    />
+                  }
+                />
+                <TooltipContent side="bottom">GitHub</TooltipContent>
+              </Tooltip>
+            )}
+            {liveLink && (
+              <Tooltip>
+                <TooltipTrigger
+                  render={
+                    <LinkIcon link={liveLink} icon={<TbWorld size={16} />} />
+                  }
+                />
+                <TooltipContent side="bottom">Live</TooltipContent>
+              </Tooltip>
+            )}
+          </div>
+        </CardFooter>
+      </TooltipProvider>
     </Card>
   );
 }

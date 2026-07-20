@@ -13,7 +13,12 @@ export default function StackBtn({
 }) {
   return (
     <div>
-      <a href={url} className="inline-block">
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href={url}
+        className="inline-block"
+      >
         <MagneticButton>
           <Button
             variant={"outline"}
@@ -23,7 +28,7 @@ export default function StackBtn({
             <span className="inline-flex items-center justify-center leading-none">
               {icon}
             </span>
-            <span className="mt-0.5 leading-none">{text}</span>
+            <span>{text}</span>
           </Button>
         </MagneticButton>
       </a>

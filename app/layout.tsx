@@ -28,7 +28,7 @@ export default function RootLayout({
       )}
       suppressHydrationWarning
     >
-      <body className="flex min-h-full flex-col items-center overflow-x-clip">
+      <body className="flex min-h-full flex-col items-center overflow-x-clip ">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

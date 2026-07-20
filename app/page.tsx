@@ -1,12 +1,10 @@
 import Container from "@/components/Container";
-import Header from "./pages/Header";
-import Hero from "./pages/Hero";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
 import TechStack from "./pages/TechStack";
 import Projects from "./pages/Projects";
 import GithubActivity from "./pages/GithubActivity";
 import NewHero from "./pages/NewHero";
+import Blogs from "./pages/Blogs";
+
 export default function Home() {
   return (
     <>
@@ -15,6 +13,7 @@ export default function Home() {
         <GithubActivity />
         <Projects />
         <TechStack />
+        <Blogs />
       </Container>
     </>
   );

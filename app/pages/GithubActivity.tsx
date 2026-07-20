@@ -1,5 +1,3 @@
-import Heading from "@/components/Heading"
-import ScaleX from "@/components/ScaleX"
 import GithubActivity from "@/components/GithubActivity"
 
 export default function GithubCalendar() {

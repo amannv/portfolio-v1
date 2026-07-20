@@ -32,6 +32,7 @@ import {
   SiPostgresql,
   SiVercel,
   SiPostman,
+  SiSocketdotio,
 } from "react-icons/si";
 import { TbSql } from "react-icons/tb";
 
@@ -43,29 +44,150 @@ interface StackItem {
 }
 
 const stackItems: StackItem[] = [
-  { title: "C", icon: <SiC />, url: "", type: "language" },
-  { title: "C++", icon: <SiCplusplus />, url: "", type: "language" },
-  { title: "JavaScript", icon: <SiJavascript />, url: "", type: "language" },
-  { title: "TypeScript", icon: <SiTypescript />, url: "", type: "language" },
-  { title: "HTML5", icon: <FaHtml5 />, url: "", type: "frontend" },
-  { title: "CSS3", icon: <FaCss3Alt />, url: "", type: "frontend" },
-  { title: "Tailwind CSS", icon: <SiTailwindcss />, url: "", type: "frontend" },
-  { title: "React", icon: <FaReact />, url: "", type: "frontend" },
-  { title: "Next.js", icon: <SiNextdotjs />, url: "", type: "frontend" },
-  { title: "Vite", icon: <SiVite />, url: "", type: "frontend" },
-  { title: "Node.js", icon: <FaNodeJs />, url: "", type: "backend" },
-  { title: "Express", icon: <SiExpress />, url: "", type: "backend" },
-  { title: "MongoDB", icon: <SiMongodb />, url: "", type: "backend" },
-  { title: "PostgreSQL", icon: <SiPostgresql />, url: "", type: "backend" },
-  { title: "SQL", icon: <TbSql />, url: "", type: "backend" },
-  { title: "Supabase", icon: <SiSupabase />, url: "", type: "backend" },
-  { title: "Cloudinary", icon: <SiCloudinary />, url: "", type: "backend" },
-  { title: "Shadcn UI", icon: <SiShadcnui />, url: "", type: "frontend" },
-  { title: "Vercel", icon: <SiVercel />, url: "", type: "tool" },
-  { title: "Postman", icon: <SiPostman />, url: "", type: "tool" },
-  { title: "Git", icon: <FaGitAlt />, url: "", type: "tool" },
-  { title: "GitHub", icon: <FaGithub />, url: "", type: "tool" },
-  { title: "Figma", icon: <FaFigma />, url: "", type: "design" },
+  {
+    title: "C",
+    icon: <SiC />,
+    url: "https://en.wikipedia.org/wiki/C_(programming_language)",
+    type: "language",
+  },
+  {
+    title: "C++",
+    icon: <SiCplusplus />,
+    url: "https://isocpp.org/",
+    type: "language",
+  },
+  {
+    title: "JavaScript",
+    icon: <SiJavascript />,
+    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    type: "language",
+  },
+  {
+    title: "TypeScript",
+    icon: <SiTypescript />,
+    url: "https://www.typescriptlang.org/",
+    type: "language",
+  },
+  {
+    title: "HTML5",
+    icon: <FaHtml5 />,
+    url: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+    type: "frontend",
+  },
+  {
+    title: "CSS3",
+    icon: <FaCss3Alt />,
+    url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+    type: "frontend",
+  },
+  {
+    title: "Tailwind CSS",
+    icon: <SiTailwindcss />,
+    url: "https://tailwindcss.com/",
+    type: "frontend",
+  },
+  {
+    title: "React",
+    icon: <FaReact />,
+    url: "https://react.dev/",
+    type: "frontend",
+  },
+  {
+    title: "Next.js",
+    icon: <SiNextdotjs />,
+    url: "https://nextjs.org/",
+    type: "frontend",
+  },
+  {
+    title: "Vite",
+    icon: <SiVite />,
+    url: "https://vitejs.dev/",
+    type: "frontend",
+  },
+  {
+    title: "Node.js",
+    icon: <FaNodeJs />,
+    url: "https://nodejs.org/",
+    type: "backend",
+  },
+  {
+    title: "Express",
+    icon: <SiExpress />,
+    url: "https://expressjs.com/",
+    type: "backend",
+  },
+  {
+    title: "MongoDB",
+    icon: <SiMongodb />,
+    url: "https://www.mongodb.com/",
+    type: "backend",
+  },
+  {
+    title: "PostgreSQL",
+    icon: <SiPostgresql />,
+    url: "https://www.postgresql.org/",
+    type: "backend",
+  },
+  {
+    title: "SQL",
+    icon: <TbSql />,
+    url: "https://en.wikipedia.org/wiki/SQL",
+    type: "backend",
+  },
+  {
+    title: "Supabase",
+    icon: <SiSupabase />,
+    url: "https://supabase.com/",
+    type: "backend",
+  },
+  {
+    title: "Cloudinary",
+    icon: <SiCloudinary />,
+    url: "https://cloudinary.com/",
+    type: "backend",
+  },
+  {
+    title: "Shadcn UI",
+    icon: <SiShadcnui />,
+    url: "https://ui.shadcn.com/",
+    type: "frontend",
+  },
+  {
+    title: "Vercel",
+    icon: <SiVercel />,
+    url: "https://vercel.com/",
+    type: "tool",
+  },
+  {
+    title: "Postman",
+    icon: <SiPostman />,
+    url: "https://www.postman.com/",
+    type: "tool",
+  },
+  {
+    title: "Git",
+    icon: <FaGitAlt />,
+    url: "https://git-scm.com/",
+    type: "tool",
+  },
+  {
+    title: "GitHub",
+    icon: <FaGithub />,
+    url: "https://github.com/",
+    type: "tool",
+  },
+  {
+    title: "Figma",
+    icon: <FaFigma />,
+    url: "https://www.figma.com/",
+    type: "design",
+  },
+  {
+    title: "WebSockets",
+    icon: <SiSocketdotio />,
+    url: "https://socket.io/",
+    type: "backend",
+  },
 ];
 
 const filters = [
@@ -94,13 +216,15 @@ export default function TechStack() {
             variant="outline"
             size="sm"
             onClick={() => setDropdownOpen(!dropdownOpen)}
-            className="h-7 px-2.5 mr-3 py-1 text-xs font-semibold flex items-center gap-1.5"
+            className="mr-3 flex h-7 items-center gap-1.5 px-2.5 py-1 text-xs font-semibold"
           >
             <span>{filters.find((f) => f.value === activeFilter)?.label}</span>
-            <span className="text-[10px]"><RiArrowDropDownLine /></span>
+            <span className="text-[10px]">
+              <RiArrowDropDownLine />
+            </span>
           </Button>
           {dropdownOpen && (
-            <div className="absolute right-0 mt-1 w-40 rounded-md border bg-popover text-popover-foreground shadow-md z-50 font-mono text-xs overflow-hidden">
+            <div className="bg-popover text-popover-foreground absolute right-0 z-50 mt-1 w-40 overflow-hidden rounded-md border font-mono text-xs shadow-md">
               {filters.map((filter) => (
                 <button
                   key={filter.value}
@@ -109,8 +233,9 @@ export default function TechStack() {
                     setDropdownOpen(false);
                   }}
                   className={cn(
-                    "w-full text-left px-3 py-2 hover:bg-muted transition-colors cursor-pointer block font-semibold",
-                    activeFilter === filter.value && "bg-muted/80 text-foreground"
+                    "hover:bg-muted block w-full cursor-pointer px-3 py-2 text-left font-semibold transition-colors",
+                    activeFilter === filter.value &&
+                      "bg-muted/80 text-foreground",
                   )}
                 >
                   {filter.label}
@@ -121,7 +246,7 @@ export default function TechStack() {
         </div>
       </Heading>
       <div className="relative flex flex-wrap gap-1 px-12 py-5">
-        <div className="absolute bottom-0 left-1/2 w-screen -translate-x-1/2 border-b pointer-events-none z-0" />
+        <div className="pointer-events-none absolute bottom-0 left-1/2 z-0 w-screen -translate-x-1/2 border-b" />
         {filteredItems.map((item, index) => (
           <StackBtn
             key={index}
