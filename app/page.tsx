@@ -1,15 +1,17 @@
 import Container from "@/components/Container";
-import TechStack from "./pages/TechStack";
-import Projects from "./pages/Projects";
-import GithubActivity from "./pages/GithubActivity";
-import NewHero from "./pages/NewHero";
-import Blogs from "./pages/Blogs";
+import TechStack from "./sections/TechStack";
+import Projects from "./sections/Projects";
+import GithubActivity from "./sections/GithubActivity";
+import Hero from "./sections/Hero";
+import Blogs from "./sections/Blogs";
+import Contact from "./sections/Contact";
 
 export default function Home() {
   return (
     <>
       <Container>
-        <NewHero />
+        <Hero />
+        <Contact />
         <GithubActivity />
         <Projects />
         <TechStack />

@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Heading from "@/components/Heading";
-import ScaleX from "@/components/ScaleX";
 import StackBtn from "@/components/StackBtn";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";

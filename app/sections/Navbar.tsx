@@ -22,7 +22,6 @@ export default function Navbar({ className }: { className?: string }) {
           className,
         )}
       >
-       
         <div className="flex items-center justify-center">
           {/* <div className="p-4 text-sm font-bold tracking-tight">Projects</div>
           <div className="p-4 text-sm font-bold tracking-tight">Blogs</div>

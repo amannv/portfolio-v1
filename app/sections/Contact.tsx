@@ -1,11 +1,9 @@
-import Heading from "@/components/Heading";
 import ContactBtn from "@/components/ContactBtn";
 import Icon from "@/components/icons/Icon";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { FaXTwitter, FaMedium } from "react-icons/fa6";
 import { Mail } from "lucide-react";
 import { GrDocumentText } from "react-icons/gr";
-import ScaleX from "@/components/ScaleX";
 
 const contactItems = [
   { icon: <FaGithub />, text: "Github", url: "https://github.com/amannv" },
@@ -24,7 +22,7 @@ const contactItems = [
   },
 ];
 
-export default function NewContact() {
+export default function Contact() {
   return (
     <>
       <div className="relative flex flex-wrap items-center justify-center gap-3">
