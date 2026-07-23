@@ -9,7 +9,13 @@ export const getBlog = async (slug: string) => {
       "utf8",
     );
 
-    const { content, frontmatter } = await compileMDX<{ title: string }>({
+    const { content, frontmatter } = await compileMDX<{
+      title: string;
+      publishedAt: string;
+      description: string;
+      readingTime: string;
+      tags?: string[];
+    }>({
       source: blogContent,
       options: { parseFrontmatter: true },
     });
@@ -19,3 +25,36 @@ export const getBlog = async (slug: string) => {
     return null;
   }
 };
+
+export const getAllBlogs = async () => {
+  const files = await fs.readdir(path.join(process.cwd(), "content/blogs"))
+
+  const allBlogs = await Promise.all(files.map(async (file) => {
+    const slug = file.replace(".mdx", "");
+    const frontmatter = await getFrontmatterBySlug(slug);
+    return {
+      slug,
+      ...frontmatter
+    }
+  }));
+
+  return allBlogs;
+}
+
+export const getFrontmatterBySlug = async (slug: string) => {
+  try {
+    const blogContent = await fs.readFile(
+      path.join(process.cwd(), `content/blogs/${slug}.mdx`),
+      "utf8",
+    );
+
+    const { frontmatter } = await compileMDX<{ title: string }>({
+      source: blogContent,
+      options: { parseFrontmatter: true },
+    });
+
+    return frontmatter;
+  } catch (e) {
+    return null;
+  }
+}

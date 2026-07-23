@@ -5,6 +5,7 @@ import GithubActivity from "./sections/GithubActivity";
 import Hero from "./sections/Hero";
 import Blogs from "./sections/Blogs";
 import Contact from "./sections/Contact";
+import Connect from "./sections/Connect";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <Projects />
         <TechStack />
         <Blogs />
+        <Connect />
       </Container>
     </>
   );

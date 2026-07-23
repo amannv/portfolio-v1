@@ -1,18 +1,30 @@
-import Container from "@/components/Container";
+import PageContainer from "@/components/PageContainer";
 import { Metadata } from "next";
+import { getAllBlogs } from "@/lib/mdx";
+import BlogCard, { BlogFrontmatter } from "@/components/BlogCard";
+import PageNavbar from "@/components/PageNavbar";
 
 export const metadata: Metadata = {
   title: "Blogs - Aman Verma",
   description: "Writings and learnings which i got through project building.",
 };
 
-export default function Page() {
+export default async function Page() {
+  const allBlogs = await getAllBlogs();
+
   return (
-    <Container className="px-6 py-12 md:py-20">
-      <div className="mx-auto w-full max-w-3xl">
-        <h1 className="font-heading mb-6 text-4xl">Blogs</h1>
-        <p className="text-muted-foreground">List of blogs coming soon.</p>
+    <PageContainer>
+      <PageNavbar title="Blogs" backHref="/" />
+      <div className="mx-auto w-full max-w-screen">
+        <div>
+          {allBlogs.map((blog, idx) => (
+            <BlogCard key={idx} blog={blog as BlogFrontmatter} />
+          ))}
+          {allBlogs.length === 0 && (
+            <p className="text-muted-foreground mt-8">No blogs found.</p>
+          )}
+        </div>
       </div>
-    </Container>
+    </PageContainer>
   );
 }
