@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import ProjectCard, { ProjectCardProps } from "@/components/ProjectCard";
 import PageNavbar from "@/components/PageNavbar";
 import { cn } from "@/lib/utils";
+import Connect from "../sections/Connect";
 
 export const metadata: Metadata = {
   title: "Projects - Aman Verma",
@@ -60,7 +61,7 @@ export default function Page() {
     <>
     <PageContainer>
       <PageNavbar title="Projects" backHref="/" />
-      <div className="relative border-b">
+      <div className="relative">
         <div className="grid w-full grid-cols-1 md:grid-cols-2">
           {projectsList.map((project, idx) => (
             <div
@@ -78,6 +79,7 @@ export default function Page() {
           ))}
         </div>
       </div>
+      <Connect />
     </PageContainer>
     </>
   );

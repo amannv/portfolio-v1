@@ -6,9 +6,9 @@ export default async function Blogs() {
   const allBlogs = await getAllBlogs();
   return (
     <>
-      <Heading title="Blogs" />
+      <Heading title="Recent Blogs" />
         {allBlogs.map((blog, idx) => (
-          <BlogCard key={idx} blog={blog as BlogFrontmatter} />
+          <BlogCard key={idx} blog={blog as BlogFrontmatter} isLast={idx === allBlogs.length - 1} />
         ))}
     </>
   );

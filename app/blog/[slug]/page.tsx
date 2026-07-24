@@ -3,7 +3,7 @@ import { getBlog } from "@/lib/mdx";
 import { redirect } from "next/navigation";
 import PageNavbar from "@/components/PageNavbar";
 import { format } from "date-fns";
-import Heading from "@/components/Heading";
+import Quote from "@/app/sections/Quote";
 
 interface Props {
   params: Promise<{
@@ -64,6 +64,7 @@ export default async function Page({ params }: Props) {
         <article className="prose prose-neutral dark:prose-invert prose-headings:font-heading prose-headings:font-normal prose-a:text-primary prose-a:underline-offset-4 hover:prose-a:text-primary/80 prose-img:rounded-xl prose-img:border prose-img:shadow-sm prose-pre:bg-secondary/50 prose-pre:border prose-pre:border-border/50 prose-pre:rounded-xl w-full max-w-none [&>h1:first-child]:hidden">
           {content}
         </article>
+        <Quote />
       </div>
     </PageContainer>
   );

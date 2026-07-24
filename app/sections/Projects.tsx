@@ -67,7 +67,6 @@ export default function Projects() {
           </div>
         ))}
       </div>
-      <div className="pointer-events-none absolute bottom-0 left-1/2 z-0 w-screen -translate-x-1/2 border-b" />
     </div>
   );
 }

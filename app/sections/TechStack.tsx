@@ -245,7 +245,6 @@ export default function TechStack() {
         </div>
       </Heading>
       <div className="relative flex flex-wrap gap-1 px-12 py-5">
-        <div className="pointer-events-none absolute bottom-0 left-1/2 z-0 w-screen -translate-x-1/2 border-b" />
         {filteredItems.map((item, index) => (
           <StackBtn
             key={index}
