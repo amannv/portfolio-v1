@@ -13,6 +13,7 @@ export default function Container({ children, className }: { children: React.Rea
           {children}
         </div>
       </div>
+      <ScaleX className="h-24 z-20 border-t" />
     </div>
   );
 }

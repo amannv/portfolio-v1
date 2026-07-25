@@ -2,6 +2,7 @@ import Heading from "@/components/Heading";
 import ScaleX from "@/components/ScaleX";
 import ProjectCard, { ProjectCardProps } from "@/components/ProjectCard";
 import { cn } from "@/lib/utils";
+import HeadingButton from "@/components/HeadingButton";
 
 const projectsList: ProjectCardProps[] = [
   {
@@ -67,6 +68,7 @@ export default function Projects() {
           </div>
         ))}
       </div>
+      <HeadingButton title={"View All Projects"} href={"/projects"} />
     </div>
   );
 }

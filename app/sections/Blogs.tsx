@@ -2,6 +2,7 @@ import Heading from "@/components/Heading";
 import BlogCard2, { BlogFrontmatter } from "@/components/BlogCard2";
 import { getAllBlogs } from "@/lib/mdx";
 import { cn } from "@/lib/utils";
+import HeadingButton from "@/components/HeadingButton";
 
 export default async function Blogs() {
   const allBlogs = (await getAllBlogs())
@@ -28,6 +29,7 @@ export default async function Blogs() {
           </div>
         ))}
       </div>
+    <HeadingButton title={"View All Blogs"} href={"/blog"} />
     </>
   );
 }
