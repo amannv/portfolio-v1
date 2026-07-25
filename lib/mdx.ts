@@ -15,6 +15,7 @@ export const getBlog = async (slug: string) => {
       description: string;
       readingTime: string;
       tags?: string[];
+      image?: string;
     }>({
       source: blogContent,
       options: { parseFrontmatter: true },
@@ -48,7 +49,14 @@ export const getFrontmatterBySlug = async (slug: string) => {
       "utf8",
     );
 
-    const { frontmatter } = await compileMDX<{ title: string }>({
+    const { frontmatter } = await compileMDX<{
+      title: string;
+      publishedAt: string;
+      description: string;
+      readingTime: string;
+      tags?: string[];
+      image?: string;
+    }>({
       source: blogContent,
       options: { parseFrontmatter: true },
     });

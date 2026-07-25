@@ -4,7 +4,6 @@ import { getAllBlogs } from "@/lib/mdx";
 import BlogCard, { BlogFrontmatter } from "@/components/BlogCard";
 import PageNavbar from "@/components/PageNavbar";
 import Connect from "../sections/Connect";
-import Quote from "../sections/Quote";
 
 export const metadata: Metadata = {
   title: "Blogs - Aman Verma",
@@ -27,7 +26,6 @@ export default async function Page() {
           )}
         </div>
       </div>
-      <Quote />
       <Connect />
     </PageContainer>
   );

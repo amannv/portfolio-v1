@@ -3,7 +3,6 @@ import { getBlog } from "@/lib/mdx";
 import { redirect } from "next/navigation";
 import PageNavbar from "@/components/PageNavbar";
 import { format } from "date-fns";
-import Quote from "@/app/sections/Quote";
 
 interface Props {
   params: Promise<{
@@ -27,13 +26,16 @@ export default async function Page({ params }: Props) {
       <PageNavbar backHref="/blog" />
       <div className="mx-auto w-full max-w-full px-6 md:px-12">
         <header className="mt-4 mb-8 flex flex-col items-start">
-          <h1 className="text-3xl md:text-4xl font-heading tracking-tight mb-4">
+          <h1 className="font-heading mb-4 text-3xl tracking-tight md:text-4xl">
             {frontmatter.title}
           </h1>
-          
-          <div className="flex flex-wrap items-center justify-center gap-3 text-sm text-muted-foreground mb-6">
+
+          <div className="text-muted-foreground mb-6 flex flex-wrap items-center justify-center gap-3 text-sm">
             {frontmatter.publishedAt && (
-              <time dateTime={frontmatter.publishedAt} className="flex items-center gap-1.5">
+              <time
+                dateTime={frontmatter.publishedAt}
+                className="flex items-center gap-1.5"
+              >
                 {format(new Date(frontmatter.publishedAt), "MMMM dd, yyyy")}
               </time>
             )}
@@ -52,7 +54,7 @@ export default async function Page({ params }: Props) {
               {frontmatter.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1 bg-secondary/50 text-secondary-foreground text-xs rounded-full border border-border/50"
+                  className="bg-secondary/50 text-secondary-foreground border-border/50 rounded-full border px-3 py-1 text-xs"
                 >
                   {tag}
                 </span>
@@ -64,7 +66,6 @@ export default async function Page({ params }: Props) {
         <article className="prose prose-neutral dark:prose-invert prose-headings:font-heading prose-headings:font-normal prose-a:text-primary prose-a:underline-offset-4 hover:prose-a:text-primary/80 prose-img:rounded-xl prose-img:border prose-img:shadow-sm prose-pre:bg-secondary/50 prose-pre:border prose-pre:border-border/50 prose-pre:rounded-xl w-full max-w-none [&>h1:first-child]:hidden">
           {content}
         </article>
-        <Quote />
       </div>
     </PageContainer>
   );

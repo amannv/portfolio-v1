@@ -1,15 +1,33 @@
 import Heading from "@/components/Heading";
-import BlogCard, { BlogFrontmatter } from "@/components/BlogCard";
+import BlogCard2, { BlogFrontmatter } from "@/components/BlogCard2";
 import { getAllBlogs } from "@/lib/mdx";
+import { cn } from "@/lib/utils";
 
 export default async function Blogs() {
-  const allBlogs = await getAllBlogs();
+  const allBlogs = (await getAllBlogs())
+    .sort((a, b) => new Date(b.publishedAt ?? 0).getTime() - new Date(a.publishedAt ?? 0).getTime())
+    .slice(0, 2);
+
   return (
     <>
-      <Heading title="Recent Blogs" />
+      <Heading title="Blogs" />
+      <div className="grid w-full grid-cols-1 md:grid-cols-2">
         {allBlogs.map((blog, idx) => (
-          <BlogCard key={idx} blog={blog as BlogFrontmatter} isLast={idx === allBlogs.length - 1} />
+          <div
+            key={idx}
+            className={cn(
+              "px-16 py-8",
+              idx % 2 === 0 ? "md:pr-8 md:pl-16" : "md:pr-16 md:pl-8",
+              idx < allBlogs.length - 1 ? "border-b md:border-b-0" : "",
+              idx % 2 === 0 && idx < allBlogs.length - 1
+                ? "md:border-r"
+                : "md:border-r-0"
+            )}
+          >
+            <BlogCard2 blog={blog as BlogFrontmatter} />
+          </div>
         ))}
+      </div>
     </>
   );
 }

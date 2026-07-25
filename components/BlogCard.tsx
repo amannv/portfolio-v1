@@ -10,6 +10,7 @@ export interface BlogFrontmatter {
   description: string;
   readingTime: string;
   tags?: string[];
+  image?: string; 
 }
 
 interface BlogCardProps {
@@ -42,3 +43,5 @@ export default function BlogCard({ blog, isLast = false }: BlogCardProps) {
     </Link>
   );
 }
+
+
