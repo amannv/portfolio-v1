@@ -60,8 +60,8 @@ export default function Hero() {
             </p>
             <p className="text-sm">
               Open to internships, freelance opportunities, and collaborations.{" "}
-              <a href="/contact" className="text-foreground underline">
-                Let's talk.
+              <a href="/contact" className="text-foreground relative inline-block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:rounded-full after:bg-current">
+                 Let's build together.
               </a>
             </p>
           </div>

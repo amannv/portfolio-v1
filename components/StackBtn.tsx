@@ -23,7 +23,7 @@ export default function StackBtn({
           <Button
             variant={"outline"}
             size={"xs"}
-            className="inline-flex h-7 items-center justify-center gap-1.5 text-xs leading-none"
+            className="inline-flex h-7 items-center justify-center gap-1.5 text-xs leading-none shadow-none"
           >
             <span className="inline-flex items-center justify-center leading-none">
               {icon}

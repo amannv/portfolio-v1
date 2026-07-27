@@ -13,7 +13,7 @@ export default function ContactBtn({
     <>
       <div className="border-x p-2">
         <a href={url} target="_blank" rel="noopener noreferrer">
-          <Button className={"px-3 py-5"} variant={"outline"}>
+          <Button className={"px-3 py-5 shadow-none"} variant={"outline"}>
             {icon} {text}
           </Button>
         </a>

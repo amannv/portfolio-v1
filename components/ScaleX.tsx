@@ -9,7 +9,7 @@ export default function ScaleX({ className }: { className?: string }) {
         className,
       )}
     >
-      <Scales size={6} orientation="diagonal" />
+      <Scales size={6} orientation="diagonal"/>
     </div>
   );
 }

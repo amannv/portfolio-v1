@@ -124,7 +124,8 @@
   body {
     @apply bg-background text-foreground;
   }
-  button:not(:disabled), [role="button"]:not(:disabled) {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
     cursor: pointer;
   }
   html {
@@ -132,11 +133,12 @@
   }
 }
 
-::view-transition-old(root), ::view-transition-new(root) {
-    animation: none;
-    mix-blend-mode: normal;
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
 }
 
 @utility link-underline {
-    @apply underline decoration-current/30 decoration-1 underline-offset-3 transition-colors hover:decoration-current;
+  @apply underline decoration-current/30 decoration-1 underline-offset-3 transition-colors hover:decoration-current;
 }
