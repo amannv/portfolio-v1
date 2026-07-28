@@ -1,7 +1,9 @@
-import Link from "next/link";
-import { format } from "date-fns";
-import { ArrowUpRight } from "lucide-react";
-import { cn } from "@/lib/utils";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 export interface BlogFrontmatter {
   title: string;
@@ -10,38 +12,37 @@ export interface BlogFrontmatter {
   description: string;
   readingTime: string;
   tags?: string[];
-  image?: string; 
+  image?: string;
 }
 
-interface BlogCardProps {
-  blog: BlogFrontmatter;
-  isLast?: boolean;
-}
-
-export default function BlogCard({ blog, isLast = false }: BlogCardProps) {
+export default function BlogCard({ blog }: { blog: BlogFrontmatter }) {
   return (
-    <Link
-      href={`/blog/${blog.slug}`}
-      className={cn(
-        "group hover:bg-accent/30 flex items-center justify-between gap-4 px-12 py-4 transition-colors",
-        !isLast && "border-b",
-      )}
-    >
-      <div className="flex flex-col gap-0.5">
-        <h2 className="font-heading">{blog.title}</h2>
-        <div className="text-muted-foreground flex items-center gap-2 text-xs">
-          {blog.publishedAt && (
-            <time dateTime={blog.publishedAt}>
-              {format(new Date(blog.publishedAt), "MMM dd, yyyy")}
-            </time>
-          )}
+    <a href={`/blog/${blog.slug}`} className="block h-full">
+      <Card className="group/card relative mx-auto flex h-full w-full flex-col overflow-hidden rounded-2xl border bg-transparent pt-0 shadow-none ring-0 transition-colors duration-300">
+        <div className="relative aspect-video overflow-hidden">
+          <img
+            src={blog.image}
+            alt={blog.title}
+            className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover/card:scale-105"
+          />
         </div>
-      </div>
-      <div className="text-muted-foreground flex items-center gap-2 text-xs">
-        {blog.readingTime && <span>{blog.readingTime}</span>}
-      </div>
-    </Link>
+
+        <CardHeader className="flex flex-1 flex-col gap-2 pt-1">
+          <div className="text-muted-foreground flex items-center gap-2 text-[11px]">
+            <span>{blog.publishedAt}</span>
+            <span>·</span>
+            <span>{blog.readingTime}</span>
+          </div>
+
+          <CardTitle className="text-foreground line-clamp-2 text-sm leading-snug font-medium tracking-tight">
+            {blog.title}
+          </CardTitle>
+
+          <CardDescription className="text-muted-foreground line-clamp-2 text-xs leading-relaxed">
+            {blog.description}
+          </CardDescription>
+        </CardHeader>
+      </Card>
+    </a>
   );
 }
-
-

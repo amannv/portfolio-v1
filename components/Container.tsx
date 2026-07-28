@@ -2,18 +2,22 @@ import { cn } from "@/lib/utils";
 import ScaleX from "./ScaleX";
 import ScaleY from "./ScaleY";
 
-export default function Container({ children, className }: { children: React.ReactNode, className?: string; }) {
+export default function Container({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
-    <div className="mx-auto w-full max-w-4xl relative flex flex-col min-h-screen">
-      <ScaleX className="h-24 z-20 border-b" />
-      <div className="relative w-full flex-1 border-x bg-background">
-        <ScaleY className="absolute left-0 top-0 bottom-0 h-full w-8 border-r z-10" />
-        <ScaleY className="absolute right-0 top-0 bottom-0 h-full w-8 border-l z-10" />
-        <div className={cn("w-full relative z-0", className)}>
-          {children}
-        </div>
+    <div className="relative mx-auto flex min-h-screen w-full max-w-4xl flex-col">
+      <ScaleX className="z-20 h-24 border-b" />
+      <div className="bg-background relative w-full flex-1 border-x">
+        <ScaleY className="absolute top-0 bottom-0 left-0 z-10 h-full w-8 border-r" />
+        <ScaleY className="absolute top-0 right-0 bottom-0 z-10 h-full w-8 border-l" />
+        <div className={cn("relative z-0 w-full", className)}>{children}</div>
       </div>
-      <ScaleX className="h-24 z-20 border-t" />
+      <ScaleX className="z-20 h-24 border-t" />
     </div>
   );
 }

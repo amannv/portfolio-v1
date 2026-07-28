@@ -1,5 +1,9 @@
 import { TbWorld } from "react-icons/tb";
 import { TbBrandGithub } from "react-icons/tb";
+import LinkIcon from "./icons/LinkIcon";
+import TagIcon from "./icons/TagIcon";
+import LiveIcon from "./icons/LiveIcon";
+import BuildingIcon from "./icons/BuildingIcon";
 
 import {
   Card,
@@ -8,10 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import LinkIcon from "./icons/LinkIcon";
-import TagIcon from "./icons/TagIcon";
-import LiveIcon from "./icons/LiveIcon";
-import BuildingIcon from "./icons/BuildingIcon";
+
 import {
   TooltipContent,
   Tooltip,

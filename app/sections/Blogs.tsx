@@ -1,5 +1,5 @@
 import Heading from "@/components/Heading";
-import BlogCard2, { BlogFrontmatter } from "@/components/BlogCard2";
+import BlogCard, { BlogFrontmatter } from "@/components/BlogCard";
 import { getAllBlogs } from "@/lib/mdx";
 import { cn } from "@/lib/utils";
 import HeadingButton from "@/components/HeadingButton";
@@ -29,7 +29,7 @@ export default async function Blogs() {
                 : "md:border-r-0",
             )}
           >
-            <BlogCard2 blog={blog as BlogFrontmatter} />
+            <BlogCard blog={blog as BlogFrontmatter} />
           </div>
         ))}
       </div>

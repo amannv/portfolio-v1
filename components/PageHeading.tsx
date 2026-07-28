@@ -16,9 +16,7 @@ export default function PageHeading({
     <div className="relative">
       <div className="relative px-12 py-4">
         <div className="pointer-events-none absolute bottom-0 left-1/2 z-0 w-screen -translate-x-1/2 border-b" />
-        <h1
-          className={cn("font-heading relative z-10 text-3xl", className)}
-        >
+        <h1 className={cn("font-heading relative z-10 text-3xl", className)}>
           {title}
         </h1>
         {children}

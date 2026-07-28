@@ -28,7 +28,7 @@ export default async function Page({ params }: Props) {
       <PageNavbar backHref="/blog" title="Blogs" />
       <div className="mx-auto w-full max-w-full">
         <header className="relative w-full">
-          {/* Title Row */}
+      
           <div className="relative px-16 py-6">
             <div className="pointer-events-none absolute bottom-0 left-1/2 z-0 w-screen -translate-x-1/2 border-b" />
             <h1 className="font-heading relative z-10 text-3xl tracking-tight md:text-4xl">
@@ -36,7 +36,7 @@ export default async function Page({ params }: Props) {
             </h1>
           </div>
 
-          {/* Metadata Row */}
+        
           <div className="relative px-16 py-3">
             <div className="pointer-events-none absolute bottom-0 left-1/2 z-0 w-screen -translate-x-1/2 border-b" />
             <div className="text-muted-foreground relative z-10 flex items-center gap-3 text-sm">
@@ -59,7 +59,7 @@ export default async function Page({ params }: Props) {
             </div>
           </div>
 
-          {/* Tags Row */}
+
           {frontmatter.tags && frontmatter.tags.length > 0 && (
             <div className="relative px-16 py-4">
               <div className="pointer-events-none absolute bottom-0 left-1/2 z-0 w-screen -translate-x-1/2 border-b" />

@@ -27,7 +27,7 @@ export default function PageNavbar({
       <div className="flex w-full items-center justify-between px-11 py-3">
         <Link
           href={backHref}
-          className="text-muted-foreground ml-2 hover:text-foreground text-sm transition-colors"
+          className="text-muted-foreground hover:text-foreground ml-2 text-sm transition-colors"
         >
           ← Back to {title}
         </Link>
@@ -37,7 +37,7 @@ export default function PageNavbar({
             theme={resolvedTheme === "dark" ? "dark" : "light"}
             onThemeChange={(newTheme) => setTheme(newTheme)}
             variant="square"
-            className="hover:bg-muted flex h-8 w-8 cursor-pointer items-center justify-center rounded-full m-0 p-0 [&>svg]:h-3.5 [&>svg]:w-3.5"
+            className="hover:bg-muted m-0 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full p-0 [&>svg]:h-3.5 [&>svg]:w-3.5"
           />
         ) : (
           <div className="h-8 w-8" />

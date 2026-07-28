@@ -80,7 +80,6 @@ export default function Hero() {
           </div>
         </div>
 
-
         <div className="relative mr-3 shrink-0">
           <div className="absolute top-3 -right-5 z-50">
             {mounted && (
@@ -97,8 +96,16 @@ export default function Hero() {
               src={isAnime ? "/avatar.jpeg" : "/anime.jpeg"}
               className="h-52 w-52 rounded-xl object-cover transition-all duration-300"
             />
-            <p className="text-muted-foreground mt-2 text-center text-[11px] tracking-tight">
-              {dateTime || "—"}
+            <p className="text-muted-foreground mt-2 flex items-center justify-center gap-1.5 text-center text-[11px] font-medium tracking-tight">
+              {dateTime ? (
+                <>
+                  <span>India</span>
+                  <span>·</span>
+                  <span>{dateTime}</span>
+                </>
+              ) : (
+                "—"
+              )}
             </p>
             <button
               onClick={() => setIsAnime(!isAnime)}

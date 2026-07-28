@@ -28,19 +28,21 @@ export const getBlog = async (slug: string) => {
 };
 
 export const getAllBlogs = async () => {
-  const files = await fs.readdir(path.join(process.cwd(), "content/blogs"))
+  const files = await fs.readdir(path.join(process.cwd(), "content/blogs"));
 
-  const allBlogs = await Promise.all(files.map(async (file) => {
-    const slug = file.replace(".mdx", "");
-    const frontmatter = await getFrontmatterBySlug(slug);
-    return {
-      slug,
-      ...frontmatter
-    }
-  }));
+  const allBlogs = await Promise.all(
+    files.map(async (file) => {
+      const slug = file.replace(".mdx", "");
+      const frontmatter = await getFrontmatterBySlug(slug);
+      return {
+        slug,
+        ...frontmatter,
+      };
+    }),
+  );
 
   return allBlogs;
-}
+};
 
 export const getFrontmatterBySlug = async (slug: string) => {
   try {
@@ -65,4 +67,4 @@ export const getFrontmatterBySlug = async (slug: string) => {
   } catch (e) {
     return null;
   }
-}
+};
