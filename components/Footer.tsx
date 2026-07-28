@@ -4,10 +4,11 @@ import { GrDocumentText } from "react-icons/gr";
 
 export default function Footer() {
   return (
-    <footer className="relative flex w-full flex-col items-center justify-center pb-0 pt-20 text-center text-sm text-muted-foreground">
+    <footer className="text-muted-foreground relative flex w-full flex-col items-center justify-center pt-20 pb-0 text-center text-sm">
       <div className="mb-20">
         <p className="mb-2">
-          Designed & Developed by <span className="font-medium text-foreground">Aman</span>
+          Designed & Developed by{" "}
+          <span className="text-foreground font-medium">Aman</span>
         </p>
         <p>&copy; 2026 All rights reserved.</p>
       </div>

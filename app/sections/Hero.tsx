@@ -17,64 +17,92 @@ export default function Hero() {
   const [isAnime, setIsAnime] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [dateTime, setDateTime] = useState("");
 
   useEffect(() => {
     setMounted(true);
+
+    const update = () => {
+      const now = new Date();
+      setDateTime(
+        now.toLocaleDateString("en-IN", {
+          timeZone: "Asia/Kolkata",
+          day: "2-digit",
+          month: "short",
+          year: "numeric",
+        }) +
+          "  ·  " +
+          now.toLocaleTimeString("en-IN", {
+            timeZone: "Asia/Kolkata",
+            hour: "numeric",
+            minute: "2-digit",
+            hour12: true,
+          }),
+      );
+    };
+
+    update();
+    const interval = setInterval(update, 1000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
     <>
-      <div className="relative grid grid-cols-[1fr_auto] items-center justify-center px-12 py-5">
-        <div className="absolute top-5 right-12 z-50">
-          {mounted && (
-            <AnimatedThemeToggler
-              theme={resolvedTheme === "dark" ? "dark" : "light"}
-              onThemeChange={(newTheme) => setTheme(newTheme)}
-              variant="square"
-              className="bg-background hover:bg-muted flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border shadow-sm transition-colors [&>svg]:h-3.5 [&>svg]:w-3.5"
-            />
-          )}
-        </div>
+      <div className="relative grid grid-cols-[1fr_auto] items-start gap-8 px-13 py-6">
         <div className="pointer-events-none absolute bottom-0 left-1/2 z-0 w-screen -translate-x-1/2 border-b" />
-        <div className="relative z-10 flex flex-col gap-1">
-          <h1 className="font-heading text-3xl">Aman Verma, 20</h1>
-          <div className="text-muted-foreground pb-3 text-sm">
-            <FlipWords
-              className="text-muted-foreground dark:text-muted-foreground px-0"
-              words={words}
-            />
+
+        <div className="relative z-10 flex flex-col justify-between gap-1 py-2">
+          <div>
+            <h1 className="font-heading text-3xl">Aman Verma, 20</h1>
+            <div className="text-muted-foreground pb-3 text-sm">
+              <FlipWords
+                className="text-muted-foreground dark:text-muted-foreground px-0"
+                words={words}
+              />
+            </div>
           </div>
           <div className="text-muted-foreground flex flex-col gap-3 text-wrap">
             <p className="text-sm">
-              I'm a 3rd-year Computer Science student and
-              <span className="text-foreground"> full-stack developer </span>
-              passionate about building useful software. I enjoy creating SaaS
-              products, learning new technologies, and shipping projects that
-              make a real impact.
+              Hi, I&apos;m Aman — A 3rd-year student and full-stack engineer
+              passionate about building SaaS products and practical tools that
+              people actually use.
             </p>
             <p className="text-sm">
-              Outside of coding, I love story-driven games, movies, and great
-              storytelling—things that shape how I approach{" "}
-              <span className="text-foreground">product design</span> and user
-              experience.
+              What I do — Currently deep-diving into Next.js to architect
+              robust, scalable web apps and turn complex workflows into
+              seamless, automated experience.
             </p>
             <p className="text-sm">
-              Open to internships, freelance opportunities, and collaborations.{" "}
-              <a href="/contact" className="text-foreground relative inline-block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:rounded-full after:bg-current">
-                 Let's build together.
-              </a>
+              Offline — When away from the keyboard, I unwind with story-mode
+              games, movies, and series, enjoying great narratives and
+              world-building.
             </p>
           </div>
         </div>
-        <div className="shrink-0 p-4">
-          <div className="group relative">
+
+
+        <div className="relative mr-3 shrink-0">
+          <div className="absolute top-3 -right-5 z-50">
+            {mounted && (
+              <AnimatedThemeToggler
+                theme={resolvedTheme === "dark" ? "dark" : "light"}
+                onThemeChange={(newTheme) => setTheme(newTheme)}
+                variant="square"
+                className="bg-card hover:bg-background flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border shadow-sm transition-colors [&>svg]:h-4 [&>svg]:w-4"
+              />
+            )}
+          </div>
+          <div className="group bg-card relative mt-8 rounded-2xl border p-3 transition-shadow duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.12),0_2px_8px_rgba(0,0,0,0.06)]">
             <img
               src={isAnime ? "/avatar.jpeg" : "/anime.jpeg"}
-              className="h-52 w-52 rounded-2xl object-cover transition-all duration-300"
+              className="h-52 w-52 rounded-xl object-cover transition-all duration-300"
             />
+            <p className="text-muted-foreground mt-2 text-center text-[11px] tracking-tight">
+              {dateTime || "—"}
+            </p>
             <button
               onClick={() => setIsAnime(!isAnime)}
-              className="bg-background/80 hover:bg-muted absolute right-2 bottom-2 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border shadow-sm backdrop-blur-sm transition-colors"
+              className="bg-card hover:bg-background absolute right-4 bottom-10 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border shadow-sm transition-colors"
               title="Toggle Anime Version"
             >
               <Repeat size={14} />

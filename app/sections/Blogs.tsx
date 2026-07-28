@@ -6,7 +6,11 @@ import HeadingButton from "@/components/HeadingButton";
 
 export default async function Blogs() {
   const allBlogs = (await getAllBlogs())
-    .sort((a, b) => new Date(b.publishedAt ?? 0).getTime() - new Date(a.publishedAt ?? 0).getTime())
+    .sort(
+      (a, b) =>
+        new Date(b.publishedAt ?? 0).getTime() -
+        new Date(a.publishedAt ?? 0).getTime(),
+    )
     .slice(0, 2);
 
   return (
@@ -22,14 +26,14 @@ export default async function Blogs() {
               idx < allBlogs.length - 1 ? "border-b md:border-b-0" : "",
               idx % 2 === 0 && idx < allBlogs.length - 1
                 ? "md:border-r"
-                : "md:border-r-0"
+                : "md:border-r-0",
             )}
           >
             <BlogCard2 blog={blog as BlogFrontmatter} />
           </div>
         ))}
       </div>
-    <HeadingButton title={"View All Blogs"} href={"/blog"} />
+      <HeadingButton title={"View All Blogs"} href={"/blog"} />
     </>
   );
 }

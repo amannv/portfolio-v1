@@ -30,7 +30,7 @@ const projectsList: ProjectCardProps[] = [
     description:
       "Simple Room Chat is a real-time chat app for creating rooms, inviting friends, and messaging instantly.",
     image: "/chat-app.jpg",
-    tags: ["React.JS", "WebSockets", "Typescript", "Node.JS",],
+    tags: ["React.JS", "WebSockets", "Typescript", "Node.JS"],
     liveLink: "https://chat-application-brown-one.vercel.app",
     githubLink: "https://github.com/amannv/Chat-Application",
     isLive: true,

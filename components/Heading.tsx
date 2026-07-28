@@ -11,12 +11,16 @@ export default function Heading({
   children?: React.ReactNode;
 }) {
   return (
-    <div className={cn("relative flex justify-between items-center px-12", className)}>
-      <div className="absolute top-0 left-1/2 w-screen -translate-x-1/2 border-b pointer-events-none z-0" />
-      <div className="absolute bottom-0 left-1/2 w-screen -translate-x-1/2 border-b pointer-events-none z-0" />
-      <h1 className="py-2 text-2xl font-heading relative z-10">{title}</h1>
+    <div
+      className={cn(
+        "relative flex items-center justify-between px-12",
+        className,
+      )}
+    >
+      <div className="pointer-events-none absolute top-0 left-1/2 z-0 w-screen -translate-x-1/2 border-b" />
+      <div className="pointer-events-none absolute bottom-0 left-1/2 z-0 w-screen -translate-x-1/2 border-b" />
+      <h1 className="font-heading relative z-10 py-2 text-2xl">{title}</h1>
       {children}
     </div>
   );
 }
-

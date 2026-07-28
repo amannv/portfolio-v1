@@ -21,19 +21,19 @@ export function Quote({
       )}
       {...props}
     >
-      <div className="pointer-events-none absolute top-0 left-1/2 z-0 w-screen -translate-x-1/2 border-b border-border" />
-      <div className="pointer-events-none absolute bottom-0 left-1/2 z-0 w-screen -translate-x-1/2 border-b border-border" />
+      <div className="border-border pointer-events-none absolute top-0 left-1/2 z-0 w-screen -translate-x-1/2 border-b" />
+      <div className="border-border pointer-events-none absolute bottom-0 left-1/2 z-0 w-screen -translate-x-1/2 border-b" />
 
       {/* Huge background quote mark */}
-      <QuoteIcon className="absolute left-6 top-8 z-0 h-32 w-32 rotate-180 fill-muted text-muted opacity-50 md:left-10 md:top-10 md:h-48 md:w-48" />
-      
-      <div className="relative z-10 flex flex-col space-y-4 py-6 px-20">
-        <blockquote className="font-mono text-base italic leading-relaxed text-foreground md:text-xl">
+      <QuoteIcon className="fill-muted text-muted absolute top-8 left-6 z-0 h-32 w-32 rotate-180 opacity-50 md:top-10 md:left-10 md:h-48 md:w-48" />
+
+      <div className="relative z-10 flex flex-col space-y-4 px-20 py-6">
+        <blockquote className="text-foreground font-mono text-base leading-relaxed italic md:text-xl">
           "{text}"
         </blockquote>
-        
-        <div className="text-right font-mono text-sm italic text-muted-foreground md:text-base">
-          {author.startsWith('-') ? author : `- ${author}`}
+
+        <div className="text-muted-foreground text-right font-mono text-sm italic md:text-base">
+          {author.startsWith("-") ? author : `- ${author}`}
         </div>
       </div>
     </div>

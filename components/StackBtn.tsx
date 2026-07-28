@@ -22,7 +22,7 @@ export default function StackBtn({
         <MagneticButton>
           <Button
             variant={"outline"}
-            size={"xs"}
+            size={"lg"}
             className="inline-flex h-7 items-center justify-center gap-1.5 text-xs leading-none shadow-none"
           >
             <span className="inline-flex items-center justify-center leading-none">
