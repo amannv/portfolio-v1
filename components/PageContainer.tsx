@@ -1,8 +1,6 @@
 import ScaleY from "./ScaleY";
 import ScaleX from "./ScaleX";
 import { cn } from "@/lib/utils";
-import { Quote } from "./Quote";
-import Footer from "./Footer";
 
 export default function Container({
   children,
