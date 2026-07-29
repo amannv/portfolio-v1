@@ -30,7 +30,7 @@ export default async function Page() {
             <div
               key={idx}
               className={cn(
-                "px-16 py-8",
+                "px-8 py-6 md:px-16 md:py-8",
                 idx % 2 === 0 ? "md:pr-8 md:pl-16" : "md:pr-16 md:pl-8",
                 idx === total - 1 ? "border-b-0" : "border-b",
                 idx < 2 ? "md:border-b" : "md:border-b-0",

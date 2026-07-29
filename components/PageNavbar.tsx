@@ -24,7 +24,7 @@ export default function PageNavbar({
   return (
     <div className="bg-background relative z-30 w-full">
       <div className="pointer-events-none absolute bottom-0 left-1/2 z-0 w-screen -translate-x-1/2 border-b" />
-      <div className="flex w-full items-center justify-between px-11 py-3">
+      <div className="flex w-full items-center justify-between px-8 py-3 md:px-11">
         <Link
           href={backHref}
           className="text-muted-foreground hover:text-foreground ml-2 text-sm transition-colors"

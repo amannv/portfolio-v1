@@ -244,7 +244,7 @@ export default function TechStack() {
           )}
         </div>
       </Heading>
-      <div className="relative flex flex-wrap gap-1 px-12 py-5">
+      <div className="relative flex flex-wrap gap-1 px-8 py-5 md:px-12">
         {filteredItems.map((item, index) => (
           <StackBtn
             key={index}

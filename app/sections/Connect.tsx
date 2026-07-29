@@ -10,7 +10,7 @@ export default function Connect() {
     <>
       <Heading title="Work With Me" />
       <div className="relative w-full px-6 py-12 md:px-12 md:py-16">
-        <div className="mx-auto w-full max-w-3xl p-8 text-center">
+        <div className="mx-auto w-full max-w-3xl p-4 text-center md:p-8">
           <h2 className="font-heading mb-1 text-2xl font-medium tracking-wide md:text-3xl">
             Have a project in mind?
           </h2>
@@ -18,48 +18,48 @@ export default function Connect() {
             Feel free to reach out through any of these platforms
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-3">
+          <div className="flex flex-nowrap items-center justify-center gap-2 sm:flex-wrap sm:gap-3">
             <a
               href="https://x.com/amanntwt"
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
-                buttonVariants({ variant: "outline" }),
-                "border-border text-muted-foreground hover:bg-muted/50 hover:text-foreground bg-transparent shadow-none transition-colors",
+                buttonVariants({ variant: "outline", size: "sm" }),
+                "border-border text-muted-foreground hover:bg-muted/50 hover:text-foreground bg-transparent px-2.5 shadow-none transition-colors sm:px-4",
               )}
             >
-              <FaXTwitter /> X
+              <FaXTwitter /> <span className="hidden sm:inline">X</span>
             </a>
             <a
               href="https://github.com/amannv"
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
-                buttonVariants({ variant: "outline" }),
-                "border-border text-muted-foreground hover:bg-muted/50 hover:text-foreground bg-transparent shadow-none transition-colors",
+                buttonVariants({ variant: "outline", size: "sm" }),
+                "border-border text-muted-foreground hover:bg-muted/50 hover:text-foreground bg-transparent px-2.5 shadow-none transition-colors sm:px-4",
               )}
             >
-              <FaGithub /> GitHub
+              <FaGithub /> <span className="hidden sm:inline">GitHub</span>
             </a>
             <a
               href="mailto:amanworkstuff@gmail.com"
               className={cn(
-                buttonVariants({ variant: "outline" }),
-                "border-border text-muted-foreground hover:bg-muted/50 hover:text-foreground bg-transparent shadow-none transition-colors",
+                buttonVariants({ variant: "outline", size: "sm" }),
+                "border-border text-muted-foreground hover:bg-muted/50 hover:text-foreground bg-transparent px-2.5 shadow-none transition-colors sm:px-4",
               )}
             >
-              <Mail size={15} /> Email
+              <Mail size={15} /> <span className="hidden sm:inline">Email</span>
             </a>
             <a
               href="https://www.linkedin.com/in/aman-verma-473645328/"
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
-                buttonVariants({ variant: "outline" }),
-                "border-border text-muted-foreground hover:bg-muted/50 hover:text-foreground bg-transparent shadow-none transition-colors",
+                buttonVariants({ variant: "outline", size: "sm" }),
+                "border-border text-muted-foreground hover:bg-muted/50 hover:text-foreground bg-transparent px-2.5 shadow-none transition-colors sm:px-4",
               )}
             >
-              <FaLinkedin /> LinkedIn
+              <FaLinkedin /> <span className="hidden sm:inline">LinkedIn</span>
             </a>
           </div>
         </div>

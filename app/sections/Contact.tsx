@@ -25,7 +25,7 @@ const contactItems = [
 export default function Contact() {
   return (
     <>
-      <div className="relative flex flex-wrap items-center justify-center gap-2">
+      <div className="relative flex flex-nowrap items-center justify-center gap-1.5 sm:gap-2">
         <div className="pointer-events-none absolute bottom-0 left-1/2 z-0 w-screen -translate-x-1/2 border-b" />
         {contactItems.map((contact, index) => (
           <ContactBtn

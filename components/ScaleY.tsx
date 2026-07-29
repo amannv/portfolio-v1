@@ -5,7 +5,7 @@ export default function ScaleY({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "bg-background relative z-10 min-h-full w-8 overflow-hidden",
+        "bg-background relative z-10 min-h-full w-4 overflow-hidden md:w-8",
         className,
       )}
     >
