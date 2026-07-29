@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 import { AnimatedThemeToggler } from "./ui/animated-theme-toggler";
 import { useEffect, useState } from "react";
+import useSound from "use-sound";
 
 interface BlogNavbarProps {
   title?: string;
@@ -16,6 +17,7 @@ export default function PageNavbar({
 }: BlogNavbarProps) {
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [toggle] = useSound("/sounds/toggle.mp3");
 
   useEffect(() => {
     setMounted(true);
@@ -36,6 +38,7 @@ export default function PageNavbar({
           <AnimatedThemeToggler
             theme={resolvedTheme === "dark" ? "dark" : "light"}
             onThemeChange={(newTheme) => setTheme(newTheme)}
+            onClick={() => toggle()}
             variant="square"
             className="hover:bg-muted m-0 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full p-0 [&>svg]:h-3.5 [&>svg]:w-3.5"
           />

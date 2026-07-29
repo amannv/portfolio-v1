@@ -140,6 +140,7 @@ export const AnimatedThemeToggler = ({
   fromCenter = false,
   theme,
   onThemeChange,
+  onClick,
   ...props
 }: AnimatedThemeTogglerProps) => {
   const shape = variant ?? "circle";
@@ -166,7 +167,9 @@ export const AnimatedThemeToggler = ({
     return () => observer.disconnect();
   }, [isControlled]);
 
-  const toggleTheme = useCallback(() => {
+  const toggleTheme = useCallback((e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    onClick?.(e);
+    
     const button = buttonRef.current;
     if (!button) return;
 
@@ -257,7 +260,7 @@ export const AnimatedThemeToggler = ({
         );
       });
     }
-  }, [shape, fromCenter, duration, isDark, isControlled, onThemeChange]);
+  }, [shape, fromCenter, duration, isDark, isControlled, onThemeChange, onClick]);
 
   return (
     <button

@@ -5,6 +5,7 @@ import { useTheme } from "next-themes";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import { Repeat } from "lucide-react";
 import { FlipWords } from "@/components/ui/flip-words";
+import useSound from "use-sound";
 
 const words = [
   "Full-Stack Engineer",
@@ -18,6 +19,8 @@ export default function Hero() {
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [dateTime, setDateTime] = useState("");
+  const [toggle] = useSound("/sounds/toggle.mp3");
+  const [avatar] = useSound("/sounds/photo-change.mp3");
 
   useEffect(() => {
     setMounted(true);
@@ -85,6 +88,7 @@ export default function Hero() {
               <AnimatedThemeToggler
                 theme={resolvedTheme === "dark" ? "dark" : "light"}
                 onThemeChange={(newTheme) => setTheme(newTheme)}
+                onClick={() => toggle()}
                 variant="square"
                 className="bg-card hover:bg-background flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border transition-colors [&>svg]:h-4 [&>svg]:w-4"
               />
@@ -107,7 +111,7 @@ export default function Hero() {
               )}
             </p>
             <button
-              onClick={() => setIsAnime(!isAnime)}
+              onClick={() => { setIsAnime(!isAnime), avatar() }}
               className="bg-card hover:bg-background absolute bottom-10 right-4 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border shadow-sm transition-colors md:bottom-10 md:right-4"
               title="Toggle Anime Version"
             >
