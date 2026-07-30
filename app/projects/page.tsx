@@ -8,9 +8,52 @@ import PageHeading from "@/components/PageHeading";
 import Divider from "@/components/Divider";
 
 export const metadata: Metadata = {
-  title: "Projects - Aman Verma",
+  title: "Projects",
   description:
-    "A showcase of all the projects I've built and am currently building.",
+    "Browse projects built by Aman Verma, including collaborative whiteboards, AI-powered applications, real-time chat apps, and full-stack web applications built with Next.js, React, TypeScript, Node.js, Express, WebSockets, and MongoDB.",
+
+  keywords: [
+    "Aman Verma",
+    "Projects",
+    "Portfolio",
+    "Full Stack Developer",
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Node.js",
+    "Express",
+    "WebSockets",
+    "MongoDB",
+    "AI Projects",
+    "Developer Portfolio",
+  ],
+
+  alternates: {
+    canonical: "/projects",
+  },
+
+  openGraph: {
+    title: "Projects | Aman Verma",
+    description:
+      "Explore my collection of full-stack applications, AI tools, and developer projects.",
+    url: "https://portfolio-v1-henna-eta.vercel.app/projects",
+    images: [
+      {
+        url: "/og-projects.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Aman Verma Projects",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Projects | Aman Verma",
+    description:
+      "Explore my collection of full-stack applications, AI tools, and developer projects.",
+    images: ["/og-projects.jpeg"],
+  },
 };
 
 const projectsList: ProjectCardProps[] = [

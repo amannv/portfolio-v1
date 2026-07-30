@@ -9,8 +9,50 @@ import Divider from "@/components/Divider";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Blogs - Aman Verma",
-  description: "Writings and learnings which i got through project building.",
+  title: "Blogs",
+
+  description:
+    "Technical articles on software engineering, web development, AI, TypeScript, React, Next.js, backend development, and lessons learned while building products.",
+
+  keywords: [
+    "Programming Blog",
+    "Developer Blog",
+    "Next.js",
+    "React",
+    "TypeScript",
+    "AI",
+    "Software Engineering",
+    "Backend",
+    "Aman Verma",
+  ],
+
+  alternates: {
+    canonical: "/blogs",
+  },
+
+  openGraph: {
+    type: "website",
+    title: "Blogs | Aman Verma",
+    description:
+      "Thoughts, tutorials, and lessons from building software.",
+    url: "https://portfolio-v1-henna-eta.vercel.app/blog",
+    images: [
+      {
+        url: "/og-blogs.jpeg", 
+        width: 1200,
+        height: 630,
+        alt: "Aman Verma Blogs",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Blogs | Aman Verma",
+    description:
+      "Thoughts, tutorials, and lessons from building software.",
+    images: ["/og-blogs.jpeg"],
+  },
 };
 
 export default async function Page() {

@@ -2,6 +2,15 @@ import { promises as fs } from "fs";
 import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
 
+export interface BlogFrontmatter {
+  title: string;
+  description: string;
+  publishedAt: string;
+  readingTime: string;
+  image?: string;
+  tags?: string[];
+}
+
 export const getBlog = async (slug: string) => {
   try {
     const blogContent = await fs.readFile(
@@ -9,14 +18,7 @@ export const getBlog = async (slug: string) => {
       "utf8",
     );
 
-    const { content, frontmatter } = await compileMDX<{
-      title: string;
-      publishedAt: string;
-      description: string;
-      readingTime: string;
-      tags?: string[];
-      image?: string;
-    }>({
+    const { content, frontmatter } = await compileMDX<BlogFrontmatter>({
       source: blogContent,
       options: { parseFrontmatter: true },
     });
@@ -34,6 +36,7 @@ export const getAllBlogs = async () => {
     files.map(async (file) => {
       const slug = file.replace(".mdx", "");
       const frontmatter = await getFrontmatterBySlug(slug);
+      
       return {
         slug,
         ...frontmatter,
@@ -51,14 +54,7 @@ export const getFrontmatterBySlug = async (slug: string) => {
       "utf8",
     );
 
-    const { frontmatter } = await compileMDX<{
-      title: string;
-      publishedAt: string;
-      description: string;
-      readingTime: string;
-      tags?: string[];
-      image?: string;
-    }>({
+    const { frontmatter } = await compileMDX<BlogFrontmatter>({
       source: blogContent,
       options: { parseFrontmatter: true },
     });

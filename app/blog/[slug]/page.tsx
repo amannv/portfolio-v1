@@ -1,15 +1,27 @@
 import PageContainer from "@/components/PageContainer";
 import { getBlog } from "@/lib/mdx";
-import { redirect } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import PageNavbar from "@/components/PageNavbar";
 import { format } from "date-fns";
 import Footer from "@/app/sections/Footer";
 import Divider from "@/components/Divider";
+import { generateBlogMetadata } from "@/lib/generateBlogMetadata";
 
 interface Props {
   params: Promise<{
     slug: string;
   }>;
+}
+
+export async function generateMetadata({ params }: Props) {
+  const { slug } = await params;
+  const blog = await getBlog(slug);
+
+  if (!blog) {
+    notFound();
+  }
+
+  return generateBlogMetadata(slug, blog.frontmatter);
 }
 
 export default async function Page({ params }: Props) {

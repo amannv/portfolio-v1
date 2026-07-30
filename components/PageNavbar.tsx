@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 import { useTheme } from "next-themes";
 import { AnimatedThemeToggler } from "./ui/animated-theme-toggler";
 import { useEffect, useState } from "react";
@@ -29,9 +30,10 @@ export default function PageNavbar({
       <div className="flex w-full items-center justify-between px-8 py-3 md:px-11">
         <Link
           href={backHref}
-          className="text-muted-foreground hover:text-foreground ml-2 text-sm transition-colors"
+          className="text-muted-foreground hover:text-foreground ml-2 flex items-center gap-2 text-sm transition-colors"
         >
-          ← Back to {title}
+          <ArrowLeft className="h-4 w-4 shrink-0" />
+          <span className="truncate">Back to {title}</span>
         </Link>
 
         {mounted ? (
