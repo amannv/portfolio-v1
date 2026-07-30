@@ -1,4 +1,3 @@
-
 import { RiArrowDropDownLine } from "react-icons/ri";
 import {
   FaGitAlt,
@@ -24,13 +23,12 @@ import {
   SiVercel,
   SiPostman,
   SiSocketdotio,
-   SiReact,
+  SiReact,
   SiNodedotjs,
   SiTurborepo,
 } from "react-icons/si";
 import { TbSql } from "react-icons/tb";
 import { TbWorld, TbApi } from "react-icons/tb";
-
 
 const getTagIcon = (tag: string) => {
   switch (tag.toLowerCase()) {
@@ -55,7 +53,7 @@ const getTagIcon = (tag: string) => {
     case "vercel":
       return <SiVercel size={14} />;
     case "tailwind css":
-      return <SiTailwindcss />
+      return <SiTailwindcss />;
     default:
       return (
         <span className="font-mono text-[10px] font-bold">
@@ -65,16 +63,19 @@ const getTagIcon = (tag: string) => {
   }
 };
 
-export default function TagIcon({ tag, title }: {
-    tag: string;
-    title: string;
+export default function TagIcon({
+  tag,
+  title,
+}: {
+  tag: string;
+  title: string;
 }) {
-    return (
-        <div
-              title={title}
-              className="border-border bg-background text-muted-foreground hover:bg-muted hover:text-foreground inline-flex size-7 cursor-default items-center justify-center rounded-md border transition-colors"
-            >
-              {getTagIcon(tag)}
-            </div>
-    )
+  return (
+    <div
+      title={title}
+      className="border-border bg-background text-muted-foreground hover:bg-muted hover:text-foreground inline-flex size-7 cursor-default items-center justify-center rounded-md border transition-colors"
+    >
+      {getTagIcon(tag)}
+    </div>
+  );
 }

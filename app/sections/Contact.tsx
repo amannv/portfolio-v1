@@ -1,8 +1,7 @@
 import ContactBtn from "@/components/ContactBtn";
 import Icon from "@/components/icons/Icon";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import { FaXTwitter, FaMedium } from "react-icons/fa6";
-import { Mail } from "lucide-react";
 import { GrDocumentText } from "react-icons/gr";
 
 const contactItems = [
@@ -14,7 +13,11 @@ const contactItems = [
   },
   { icon: <FaXTwitter />, text: "Twitter", url: "https://x.com/amanntwt" },
   { icon: <FaMedium />, text: "Medium", url: "https://medium.com/@amannv" },
-  { icon: <Mail />, text: "Email", url: "mailto:amanworkstuff@gmail.com" },
+  {
+    icon: <FaEnvelope />,
+    text: "Email",
+    url: "mailto:amanworkstuff@gmail.com",
+  },
   {
     icon: <GrDocumentText />,
     text: "Resume",
@@ -24,18 +27,23 @@ const contactItems = [
 
 export default function Contact() {
   return (
-    <>
-      <div className="relative flex flex-nowrap items-center justify-center gap-1.5 sm:gap-2">
-        <div className="pointer-events-none absolute bottom-0 left-1/2 z-0 w-screen -translate-x-1/2 border-b" />
-        {contactItems.map((contact, index) => (
-          <ContactBtn
-            key={index}
-            icon={<Icon icon={contact.icon} />}
-            text={contact.text}
-            url={contact.url}
-          />
-        ))}
+    <div className="relative w-full px-4 md:px-8">
+      <div className="border-border pointer-events-none absolute bottom-0 left-1/2 z-0 w-screen -translate-x-1/2 border-b" />
+      <div className="grid w-full grid-cols-6">
+        {contactItems.map((contact, index) => {
+          let borderClasses = "border-border";
+          if (index !== 5) borderClasses += " border-r";
+          return (
+            <ContactBtn
+              key={index}
+              icon={<Icon icon={contact.icon} />}
+              text={contact.text}
+              url={contact.url}
+              className={borderClasses}
+            />
+          );
+        })}
       </div>
-    </>
+    </div>
   );
 }

@@ -55,7 +55,7 @@ export default function Hero() {
         <div className="pointer-events-none absolute bottom-0 left-1/2 z-0 w-screen -translate-x-1/2 border-b" />
         <div className="relative z-10 flex w-full flex-col justify-between gap-1 py-2 md:text-left">
           <div>
-            <h1 className="font-heading  text-3xl">Aman Verma, 20</h1>
+            <h1 className="font-heading text-3xl">Aman Verma, 20</h1>
             <div className="text-muted-foreground pb-3 text-sm">
               <FlipWords
                 className="text-muted-foreground dark:text-muted-foreground px-0"
@@ -82,8 +82,8 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="relative mx-auto shrink-0 md:mr-3 md:mx-0">
-          <div className="absolute -right-5 -top-1 z-50 md:-right-5 md:top-3">
+        <div className="relative mx-auto shrink-0 md:mx-0 md:mr-3">
+          <div className="absolute -top-1 -right-5 z-50 md:top-3 md:-right-5">
             {mounted && (
               <AnimatedThemeToggler
                 theme={resolvedTheme === "dark" ? "dark" : "light"}
@@ -111,8 +111,10 @@ export default function Hero() {
               )}
             </p>
             <button
-              onClick={() => { setIsAnime(!isAnime), avatar() }}
-              className="bg-card hover:bg-background absolute bottom-10 right-4 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border shadow-sm transition-colors md:bottom-10 md:right-4"
+              onClick={() => {
+                (setIsAnime(!isAnime), avatar());
+              }}
+              className="bg-card hover:bg-background absolute right-4 bottom-10 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border shadow-sm transition-colors md:right-4 md:bottom-10"
               title="Toggle Anime Version"
             >
               <Repeat size={13} />

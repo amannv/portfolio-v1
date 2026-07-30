@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
-import {
-  Instrument_Serif,
-  IBM_Plex_Mono,
-} from "next/font/google";
+import { Instrument_Serif, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from "@vercel/analytics/next";
 import VisitorTracker from "@/components/VisitorTracker";
 
 const instrumentSerifHeading = Instrument_Serif({
@@ -17,7 +14,7 @@ const instrumentSerifHeading = Instrument_Serif({
 const IBMPlexMono = IBM_Plex_Mono({
   subsets: ["latin"],
   variable: "--font-sans",
-  weight: [ "100", "200", "300", "400"]
+  weight: ["100", "200", "300", "400"],
 });
 export const metadata: Metadata = {
   title: "Create Next App",

@@ -10,7 +10,11 @@ export default function HeadingButton({
 }) {
   return (
     <Link href={href}>
-      <div className={cn("relative flex items-center justify-center px-8 md:px-12")}>
+      <div
+        className={cn(
+          "relative flex items-center justify-center px-8 md:px-12",
+        )}
+      >
         <div className="pointer-events-none absolute top-0 left-1/2 z-0 w-screen -translate-x-1/2 border-b" />
         <div className="p-4">
           <div className="hover:bg-accent rounded-xl p-1 outline-1 transition-colors duration-300">

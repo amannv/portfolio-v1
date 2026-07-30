@@ -1,9 +1,30 @@
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { Mail } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import ConnectBtn from "@/components/ConnectBtn";
 import Heading from "@/components/Heading";
+
+const connectHandle = [
+  {
+    icon: <FaXTwitter />,
+    title: "X",
+    href: "https://x.com/amanntwt",
+  },
+  {
+    icon: <FaGithub />,
+    title: "GitHub",
+    href: "https://github.com/amannv",
+  },
+  {
+    icon: <FaEnvelope />,
+    title: "Email",
+    href: "mailto:amanworkstuff@gmail.com",
+  },
+  {
+    icon: <FaLinkedin />,
+    title: "Linkedin",
+    href: "https://www.linkedin.com/in/aman-verma-473645328/",
+  },
+];
 
 export default function Connect() {
   return (
@@ -19,48 +40,14 @@ export default function Connect() {
           </p>
 
           <div className="flex flex-nowrap items-center justify-center gap-2 sm:flex-wrap sm:gap-3">
-            <a
-              href="https://x.com/amanntwt"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                buttonVariants({ variant: "outline", size: "sm" }),
-                "border-border text-muted-foreground hover:bg-muted/50 hover:text-foreground bg-transparent px-2.5 shadow-none transition-colors sm:px-4",
-              )}
-            >
-              <FaXTwitter /> <span className="hidden sm:inline">X</span>
-            </a>
-            <a
-              href="https://github.com/amannv"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                buttonVariants({ variant: "outline", size: "sm" }),
-                "border-border text-muted-foreground hover:bg-muted/50 hover:text-foreground bg-transparent px-2.5 shadow-none transition-colors sm:px-4",
-              )}
-            >
-              <FaGithub /> <span className="hidden sm:inline">GitHub</span>
-            </a>
-            <a
-              href="mailto:amanworkstuff@gmail.com"
-              className={cn(
-                buttonVariants({ variant: "outline", size: "sm" }),
-                "border-border text-muted-foreground hover:bg-muted/50 hover:text-foreground bg-transparent px-2.5 shadow-none transition-colors sm:px-4",
-              )}
-            >
-              <Mail size={15} /> <span className="hidden sm:inline">Email</span>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/aman-verma-473645328/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                buttonVariants({ variant: "outline", size: "sm" }),
-                "border-border text-muted-foreground hover:bg-muted/50 hover:text-foreground bg-transparent px-2.5 shadow-none transition-colors sm:px-4",
-              )}
-            >
-              <FaLinkedin /> <span className="hidden sm:inline">LinkedIn</span>
-            </a>
+            {connectHandle.map((handle, idx) => (
+              <ConnectBtn
+                key={idx}
+                title={handle.title}
+                icon={handle.icon}
+                href={handle.href}
+              />
+            ))}
           </div>
         </div>
       </div>
