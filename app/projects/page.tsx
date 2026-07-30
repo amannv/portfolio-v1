@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import ProjectCard, { ProjectCardProps } from "@/components/ProjectCard";
 import PageNavbar from "@/components/PageNavbar";
 import { cn } from "@/lib/utils";
-import Footer from "@/components/Footer";
+import Footer from "@/app/sections/Footer";
 import PageHeading from "@/components/PageHeading";
 import Divider from "@/components/Divider";
 

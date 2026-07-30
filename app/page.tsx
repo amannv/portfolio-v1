@@ -6,8 +6,9 @@ import Hero from "./sections/Hero";
 import Blogs from "./sections/Blogs";
 import Contact from "./sections/Contact";
 import Connect from "./sections/Connect";
-import { Quote } from "@/components/Quote";
-import Footer from "@/components/Footer";
+import { Quote } from "./sections/Quote";
+import Footer from "./sections/Footer";
+
 export default function Home() {
   return (
     <>

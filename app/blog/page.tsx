@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import { getAllBlogs } from "@/lib/mdx";
 import BlogCard, { BlogFrontmatter } from "@/components/BlogCard";
 import PageNavbar from "@/components/PageNavbar";
-import Footer from "@/components/Footer";
+import Footer from "@/app/sections/Footer";
 import PageHeading from "@/components/PageHeading";
 import Divider from "@/components/Divider";
 import { cn } from "@/lib/utils";

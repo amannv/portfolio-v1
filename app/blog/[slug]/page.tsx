@@ -3,7 +3,7 @@ import { getBlog } from "@/lib/mdx";
 import { redirect } from "next/navigation";
 import PageNavbar from "@/components/PageNavbar";
 import { format } from "date-fns";
-import Footer from "@/components/Footer";
+import Footer from "@/app/sections/Footer";
 import Divider from "@/components/Divider";
 
 interface Props {
