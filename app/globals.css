@@ -139,4 +139,6 @@
   mix-blend-mode: normal;
 }
 
-
+::selection {
+  @apply bg-neutral-500 text-white;
+}
