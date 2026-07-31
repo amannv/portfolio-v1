@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   ],
 
   alternates: {
-    canonical: "/blogs",
+    canonical: "/blog",
   },
 
   openGraph: {
