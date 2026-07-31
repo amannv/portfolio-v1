@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { BlogFrontmatter } from "./mdx";
 
-const siteUrl = "https://portfolio-v1-henna-eta.vercel.app";
+const siteUrl = "https://amannv.vercel.app";
 
 export function generateBlogMetadata(
   slug: string,

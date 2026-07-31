@@ -33,12 +33,11 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     title: "Blogs | Aman Verma",
-    description:
-      "Thoughts, tutorials, and lessons from building software.",
-    url: "https://portfolio-v1-henna-eta.vercel.app/blog",
+    description: "Thoughts, tutorials, and lessons from building software.",
+    url: "https://amannv.vercel.app/blog",
     images: [
       {
-        url: "/og-blogs.jpeg", 
+        url: "/og-blogs.jpg",
         width: 1200,
         height: 630,
         alt: "Aman Verma Blogs",
@@ -49,14 +48,17 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Blogs | Aman Verma",
-    description:
-      "Thoughts, tutorials, and lessons from building software.",
-    images: ["/og-blogs.jpeg"],
+    description: "Thoughts, tutorials, and lessons from building software.",
+    images: ["/og-blogs.jpg"],
   },
 };
 
 export default async function Page() {
-  const allBlogs = await getAllBlogs();
+  const allBlogs = (await getAllBlogs()).sort(
+    (a, b) =>
+      new Date(b.publishedAt ?? 0).getTime() -
+      new Date(a.publishedAt ?? 0).getTime(),
+  );
   const total = allBlogs.length;
 
   return (

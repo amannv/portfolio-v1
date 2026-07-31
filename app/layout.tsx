@@ -23,8 +23,8 @@ const siteConfig = {
   title: "Aman Verma — Portfolio",
   description:
     "A Full Stack Developer building modern web applications with Next.js, React, Node.js, TypeScript, PostgreSQL, and WebSockets. Explore my projects, technical blogs, and open-source work.",
-  url: "https://portfolio-v1-henna-eta.vercel.app",
-  image: "/og-hero.jpeg",
+  url: "https://amannv.vercel.app",
+  image: "/og-hero.jpg",
 };
 
 export const metadata: Metadata = {

@@ -36,10 +36,10 @@ export const metadata: Metadata = {
     title: "Projects | Aman Verma",
     description:
       "Explore my collection of full-stack applications, AI tools, and developer projects.",
-    url: "https://portfolio-v1-henna-eta.vercel.app/projects",
+    url: "https://amannv.vercel.app/projects",
     images: [
       {
-        url: "/og-projects.jpeg",
+        url: "/og-projects.jpg",
         width: 1200,
         height: 630,
         alt: "Aman Verma Projects",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     title: "Projects | Aman Verma",
     description:
       "Explore my collection of full-stack applications, AI tools, and developer projects.",
-    images: ["/og-projects.jpeg"],
+    images: ["/og-projects.jpg"],
   },
 };
 
