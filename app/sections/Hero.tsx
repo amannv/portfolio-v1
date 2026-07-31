@@ -10,7 +10,6 @@ import useSound from "use-sound";
 const words = [
   "Full-Stack Engineer",
   "Backend-Focused Developer",
-  "Building SaaS Products",
   "First-Principles Thinker",
 ];
 
