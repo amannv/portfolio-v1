@@ -20,7 +20,7 @@ const IBMPlexMono = IBM_Plex_Mono({
 
 const siteConfig = {
   name: "Aman Verma",
-  title: "Aman Verma — Portfolio",
+  title: "Aman Verma | Full Stack Engineer",
   description:
     "A Full Stack Developer building modern web applications with Next.js, React, Node.js, TypeScript, PostgreSQL, and WebSockets. Explore my projects, technical blogs, and open-source work.",
   url: "https://amannv.vercel.app",
